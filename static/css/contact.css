@@ -1,0 +1,214 @@
+.contact-section {
+    /* padding: 30px 0; */
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    position: relative;
+    overflow: hidden;
+}
+.contact-subtitle {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0;
+}
+
+.contact-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-desc {
+    font-size: 1.2rem;
+    
+    line-height: 1.6;
+}
+
+/* Contact Box Styles */
+.contact-box {
+    background: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    /* border-radius: 20px; */
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    background: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.contact-box h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-box p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+    color: #333;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background: white;
+    /* border-radius: 25px; */
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    height: 96%;
+}
+
+.form-input {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-input:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.contact-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+/* Map Container */
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    margin-top: 30px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        /* padding: 60px 0; */
+    }
+
+    .contact-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-form {
+        padding: 30px 25px;
+        margin-top: 30px;
+    }
+
+    .contact-box {
+        padding: 25px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-title {
+        font-size: 1.5rem;
+    }
+    .contact-subtitle{
+        font-size: 0.75rem;
+    }
+    .contact-desc {
+        font-size: 0.75rem;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
+    .contact-box{
+        box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-box, .contact-form {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.contact-box:nth-child(1) { animation-delay: 0.1s; }
+.contact-box:nth-child(2) { animation-delay: 0.2s; }
+.contact-box:nth-child(3) { animation-delay: 0.3s; }
+.contact-form { animation-delay: 0.4s; }
+
+.contact-btn{
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+}

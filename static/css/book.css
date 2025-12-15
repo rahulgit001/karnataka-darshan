@@ -1,0 +1,110 @@
+/* =============== BOOKING SECTION =============== */
+.booking-area {
+    /* background: #bbcdf9; */
+    border-radius: 20px;
+}
+.info-box {
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.info-box:hover {
+    transform: translateY(-4px);
+}
+.box-icon {
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 20px;
+}
+.booking-form {
+    border-radius: 15px;
+}
+.travel-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.travel-type-card {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.travel-type-card i {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ff7c10;
+}
+.travel-type-card.active,
+.travel-type-card:hover {
+    border-color: #ff7c10;
+    background: #e8f1ff;
+}
+.transport-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.transport-card {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.transport-card i {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ff7c10;
+}
+.transport-card.active,
+.transport-card:hover {
+    border-color: #ff7c10;
+    background: #e8f1ff;
+}
+.traveler-box .counter span {
+    font-weight: 600;
+}
+.need-help{
+    text-decoration: none;
+}
+.count-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.count-control button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #ff7c10;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.count-control input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 3px 0;
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+    .travel-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .transport-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .traveler-box {
+        flex-direction: column;
+        gap: 18px;
+    }
+}

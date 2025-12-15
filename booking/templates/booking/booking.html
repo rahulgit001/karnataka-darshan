@@ -1,0 +1,260 @@
+{% extends 'base.html' %} 
+{% block title %}
+Booking
+{% endblock %} 
+
+{% block content %}
+<!-- Booking Facility Section -->
+<section class="py-2 booking-area">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- LEFT INFO SECTION -->
+      <div class="col-lg-6 mb-4">
+        <h2 class="fw-bold text-center mb-3">Book Your Adventure Now</h2>
+        <p class="text-muted text-center mb-4">
+          Choose your options below — fast, simple and user friendly.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-bolt box-icon bg-primary"></i>
+              <h5 class="mt-2">Instant Confirmation</h5>
+              <p class="small text-muted">
+                Get your booking confirmed instantly.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-shield-alt box-icon bg-success"></i>
+              <h5 class="mt-2">Secure Payment</h5>
+              <p class="small text-muted">Multiple payment options accepted.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-headset box-icon bg-warning"></i>
+              <h5 class="mt-2">24/7 Support</h5>
+              <p class="small text-muted">We are here anytime you need.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-percentage box-icon bg-info"></i>
+              <h5 class="mt-2">Best Prices</h5>
+              <p class="small text-muted">Guaranteed lowest rates.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-sliders-h box-icon bg-secondary"></i>
+              <h5 class="mt-2">Easy Modification</h5>
+              <p class="small text-muted">
+                Modify or cancel your booking hassle-free.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-car-side box-icon bg-danger"></i>
+              <h5 class="mt-2">Wide Car Selection</h5>
+              <p class="small text-muted">
+                Choose the perfect car for your trip.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-eye-slash box-icon bg-dark"></i>
+              <h5 class="mt-2">No Hidden Charges</h5>
+              <p class="small text-muted">Transparent pricing—no surprises.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-box shadow p-3 rounded">
+              <i class="fas fa-comments box-icon bg-info"></i>
+              <h5 class="mt-2">Fast Customer Service</h5>
+              <p class="small text-muted">
+                Quick responses to all your queries.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 d-flex align-items-center">
+          <i class="fas fa-phone-alt fa-2x text-primary me-3"></i>
+          <div>
+            <h5 class="mb-1 need-help">Need Help?</h5>
+            <a href="tel:+91 8150924922" class="h4 need-help text-dark">+91 8150924922</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM SECTION -->
+      <div class="col-lg-6">
+        <div class="booking-form shadow p-4 rounded bg-white">
+          <h4 class="fw-bold text-center mb-3">Quick Booking Form</h4>
+
+            <!-- From & To Location -->
+            <label class="form-label">From Location *</label>
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Enter Pickup Location"
+              id="from_location"
+              name="from_location"
+            />
+
+            <label class="form-label">To Location *</label>
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Enter Drop / Destination Location"
+              id="to_location"
+              name="to_location"
+            />
+
+            <!-- Destination -->
+            <label class="form-label">Destination *</label>
+            <select
+              class="form-select mb-3"
+              id="destination"
+              name="destination"
+            >
+              <option disabled selected>Select Destination</option>
+              <option>Dubai</option>
+              <option>Goa</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Ooty</option>
+              <option>Coorg</option>
+              <option>Dandeli</option>
+              <option>Chikmagalur</option>
+              <option>Custom Destination</option>
+            </select>
+
+            <!-- Travel Type -->
+            <label class="form-label">Travel Type *</label>
+            <div id="Trekking" class="travel-type-grid mb-3">
+              <div class="travel-type-card active" data-value="trek">
+                <i class="fas fa-hiking"></i>
+                <p>Trekking</p>
+              </div>
+
+              <div class="travel-type-card" data-value="tour">
+                <i class="fas fa-umbrella-beach"></i>
+                <p>Tour</p>
+              </div>
+
+              <div class="travel-type-card" data-value="adventure">
+                <i class="fas fa-biking"></i>
+                <p>Adventure</p>
+              </div>
+
+              <div class="travel-type-card" data-value="family">
+                <i class="fas fa-users"></i>
+                <p>Family</p>
+              </div>
+            </div>
+
+            <!-- Transport -->
+            <label class="form-label">Transport Required</label>
+            <div class="transport-grid mb-3">
+              <div class="transport-card active">
+                <i class="fas fa-bus"></i>
+                <p>Bus</p>
+              </div>
+
+              <div class="transport-card">
+                <i class="fas fa-car-side"></i>
+                <p>Car</p>
+              </div>
+
+              <div class="transport-card">
+                <i class="fas fa-shuttle-van"></i>
+                <p>Traveller</p>
+              </div>
+            </div>
+
+            <!-- Travelers -->
+            <label class="form-label">Travelers</label>
+            <div class="traveler-box d-flex justify-content-between mb-3">
+              <div class="counter">
+                <span>Adults</span>
+                <div class="count-control">
+                  <button type="button" class="minus">-</button>
+                  <input type="text" value="2" readonly />
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+
+              <div class="counter">
+                <span>Children</span>
+                <div class="count-control">
+                  <button type="button" class="minus">-</button>
+                  <input type="text" value="0" readonly />
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+
+              <div class="counter">
+                <span>Rooms</span>
+                <div class="count-control">
+                  <button type="button" class="minus">-</button>
+                  <input type="text" value="1" readonly />
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Full Name *"
+              id="fullname"
+            />
+            <input
+              type="email"
+              class="form-control mb-3"
+              placeholder="Email *"
+              id="email"
+            />
+            <input
+              type="tel"
+              class="form-control mb-3"
+              placeholder="Mobile Number *"
+              id="mobile"
+            />
+
+            <!-- Special Request -->
+            <textarea
+              class="form-control mb-3"
+              rows="3"
+              placeholder="Special Requirements..."
+              id="requirements"
+            ></textarea>
+
+            <!-- Submit -->
+            <button
+              class="btn contact-btn w-100 py-2 fw-bold"
+              id="submitBtn"
+              onclick="submit_booking_form()"
+            >
+              <i class="fas fa-paper-plane me-2"></i>Submit Request
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

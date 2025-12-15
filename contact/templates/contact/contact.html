@@ -1,0 +1,145 @@
+{% extends 'base.html' %} 
+{% block title %}Contact
+{% endblock %} 
+{% block content %}
+
+<!-- Contact section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div class="col-lg-8 text-center">
+        <h1 class="contact-subtitle">Contact Us</h1>
+        <h2 class="contact-title">We’d Love to Hear From You</h2>
+        <p class="contact-desc">
+          Reach out to us for any queries or support. Our team replies within
+          minutes.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Contact Info -->
+      <div class="col-lg-4">
+        <div class="contact-box">
+          <div class="contact-icon">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <h4>Visit Us</h4>
+          <p><strong>Address:-</strong>
+            No 25, Hesarghatta Road, near Karnataka Bank, Defence Colony, Bagalakunte, Bengaluru, Karnataka 560073, India</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-icon">
+            <i class="bi bi-telephone-fill"></i>
+          </div>
+          <h4>Call Us</h4>
+          <p>+91 8150924922</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-icon">
+            <i class="bi bi-envelope-fill"></i>
+          </div>
+          <h4>Email Us</h4>
+          <p>support@example.com</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <div class="contact-form p-4 p-lg-5">
+          <form id="contactForm">
+            <div class="row g-3">
+              <!-- Name -->
+              <div class="col-md-6 form-floating">
+                <input
+                  type="text"
+                  class="form-control shadow-sm"
+                  id="Name"
+                  placeholder="Your Name"
+                  required
+                />
+                <label for="Name">Your Name</label>
+              </div>
+
+              <!-- Email -->
+              <div class="col-md-6 form-floating">
+                <input
+                  type="email"
+                  class="form-control shadow-sm"
+                  id="email_Id"
+                  placeholder="Your Email"
+                  required
+                />
+                <label for="email_Id">Your Email</label>
+              </div>
+
+              <!-- Phone -->
+              <div class="col-md-6 form-floating">
+                <input
+                  type="tel"
+                  class="form-control shadow-sm"
+                  id="Mob_Number"
+                  placeholder="Phone Number"
+                  required
+                />
+                <label for="Mob_Number">Phone Number</label>
+              </div>
+
+              <!-- Subject -->
+              <div class="col-md-6 form-floating">
+                <input
+                  type="text"
+                  class="form-control shadow-sm"
+                  id="Subject"
+                  placeholder="Subject"
+                  required
+                />
+                <label for="Subject">Subject</label>
+              </div>
+
+              <!-- Message -->
+              <div class="col-12 form-floating">
+                <textarea
+                  class="form-control shadow-sm"
+                  placeholder="Your Message"
+                  id="Message"
+                  style="height: 150px"
+                  required
+                ></textarea>
+                <label for="Message">Your Message</label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="col-12 text-end">
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  onclick="submit_contact()"
+                  class="btn px-5 contact-btn py-2 fw-bold"
+                >
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18..."
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

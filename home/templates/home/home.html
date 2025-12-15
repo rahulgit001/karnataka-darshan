@@ -1,0 +1,673 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- home -->
+<!-- Categories Section -->
+<section class="py-2">
+    <div class="container mt-3">
+        <h2 class="section-title">Tour Categories</h2>
+        <p class="text-center text-muted mb-4">Wonderful Place For You</p>
+
+        <div class="row">
+            {% for tour in tours %}
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a class="tour-cat" href="booking">
+                    <div class="card category-card border-0 shadow">
+                        <div class="event-images">
+                            {% for img in tour.images.all %}
+                            <img src="{{ img.image.url }}" alt="{{ tour.tour_title }}" class="card-img-top">
+                            {% endfor %}
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{tour.tour_title}}</h5>
+                            <p class="text-muted">{{tour.number_of_event}} Events</p>
+                            <a href="booking" class="btn btn-success btn-sm ms-2">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center pb-3">
+            <a href="#" class="btn View-More-Categories">View More Categories</a>
+        </div>
+    </div>
+</section>
+
+ <!-- Upcoming Events Section -->
+ <section class="py-2" id="Upcoming-Events">
+    <div class="container mt-3">
+        <h2 class="section-title">Upcoming Events</h2>
+        <p class="text-center text-muted mb-4">Explore the Karnataka with These Upcoming Trips</p>
+
+        <div class="row">
+            {% for event in events %}
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card border-0 shadow position-relative">
+                        <span class="price-tag">{{event.event_rate}}</span>
+                        <div class="event-images">
+                            {% for img in event.images.all %}
+                            <img src="{{ img.image.url }}" alt="{{ event.title }}" class="card-img-top">
+                            {% endfor %}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{event.event_title}}</h5>
+                            <p class="text-muted">{{event.event_duration}} Day</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- activity-section -->
+<section class="activity-section  py-2">
+    <div class="container mt-3 mb-5">
+        <h2 class="section-title">Popular Activities</h2>
+        <p class="text-center text-muted mb-4">Explore the Karnataka with These Popular Activities</p>
+        <div class="multi-card-slider">
+            <div class="slider-wrapper">
+                <!-- Card 1 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹629</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/kayaking-new.webp' %}" class="card-img-top"
+                            alt="Makalidurga Trek">
+                        <div class="card-body ">
+                            <h5 class="card-title">Kayaking</h5>
+                            <!-- <p class="card-text text-muted">Experience the beautiful sunrise from Makalidurga hills -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹837</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/Activities_8.webp' %}"
+                            class="card-img-top" alt="Devarayanadurga Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Waterball Zorbing</h5>
+                            <!-- <p class="card-text text-muted">Witness breathtaking views from Devarayanadurga fort</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹2699</span>
+                        <span class="days-badge">2D/1N</span> -->
+                        <img src="{% static 'images/activety/jungle-safari1.jpg' %}" class="card-img-top"
+                            alt="Coorg Tour">
+                        <div class="card-body">
+                            <h5 class="card-title">jungle-safari</h5>
+                            <!-- <p class="card-text text-muted">Explore Scotland of India with beautiful landscapes</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹189</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/boating.webp' %}" class="card-img-top"
+                            alt="Uttari Betta Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Boating</h5>
+                            <!-- <p class="card-text text-muted">Perfect one-day trek near Bangalore</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹2099</span>
+                        <span class="days-badge">2D/1N</span> -->
+                        <img src="{% static 'images/activety/Activities_5.jpg' %}" class="card-img-top"
+                            alt="Tadiandamol Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Tadiandamol Trek</h5>
+                            <!-- <p class="card-text text-muted">Highest peak in Coorg with amazing views</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹629</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/chikmagalur.jpg' %}"
+                            class="card-img-top" alt="Anthargange Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Chikmagalur Trek</h5>
+                            <!-- <p class="card-text text-muted">Explore caves and boulders at Anthargange</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate cards for seamless loop -->
+                <!-- Card 1 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹629</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/dudhsagar-falls-dandeli-attractions.jpg' %}" class="card-img-top"
+                            alt="Makalidurga Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">dudhsagar-falls</h5>
+                            <!-- <p class="card-text text-muted">Experience the beautiful sunrise from Makalidurga hills -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹837</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/Activities_3.webp' %}" class="card-img-top"
+                            alt="Devarayanadurga Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">White Water Rafting</h5>
+                            <!-- <p class="card-text text-muted">Witness breathtaking views from Devarayanadurga fort</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹2699</span>
+                        <span class="days-badge">2D/1N</span> -->
+                        <img src="{% static 'images/activety/kayaking-new.webp' %}" class="card-img-top" alt="Coorg Tour">
+                        <div class="card-body">
+                            <h5 class="card-title">Kayaking</h5>
+                            <!-- <p class="card-text text-muted">Explore Scotland of India with beautiful landscapes</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="slide">
+                    <div class="card activity-card border-0 shadow position-relative">
+                        <!-- <span class="price-tag">₹189</span>
+                        <span class="days-badge">1 Day</span> -->
+                        <img src="{% static 'images/activety/chikmagalur.jpg' %}"
+                            class="card-img-top" alt="Uttari Betta Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Uttari Betta Sunrise Trek</h5>
+                            <!-- <p class="card-text text-muted">Perfect one-day trek near Bangalore</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Treks Section -->
+<section class="py-2">
+    <div class="container mt-3 mb-4">
+        <h2 class="section-title">Popular Treks & Trips</h2>
+        <p class="text-center text-muted mb-4">Unique destinations worth exploring</p>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow position-relative treks-card">
+                    <span class="price-tag">₹189</span>
+                    <img src="{% static 'images/popular-trcks/coorg.jpg' %}"
+                        class="card-img-top" alt="Uttari Betta Sunrise Trek">
+                    <div class="card-body">
+                        <h5 class="card-title">Best Places to Visit Coorg</h5>
+                        <p class="text-muted">1 Day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow position-relative treks-card">
+                    <span class="price-tag">₹189</span>
+                    <img src="{% static 'images/popular-trcks/gokarna-karnataka.jpg' %}"
+                        class="card-img-top" alt="Nandi Hills Sunrise Trek">
+                    <div class="card-body">
+                        <h5 class="card-title">gokarna-karnataka Trek From Bangalore</h5>
+                        <p class="text-muted">1 Day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow position-relative treks-card">
+                    <span class="price-tag">₹629</span>
+                    <img src="{% static 'images/popular-trcks/hampi.jpg' %}"
+                        class="card-img-top" alt="Savandurga Trek">
+                    <div class="card-body">
+                        <h5 class="card-title">Places to Visit Hampi or Hampe</h5>
+                        <p class="text-muted">1 Day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow position-relative treks-card">
+                    <span class="price-tag">₹2699</span>
+                    <img src="{% static 'images/popular-trcks/mangalore.jpg' %}"
+                        class="card-img-top" alt="Coorg Tour">
+                    <div class="card-body">
+                        <h5 class="card-title">Mangalore is one of the major places</h5>
+                        <p class="text-muted">2 Days/1 Night</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Travel Facilities Section -->
+<section class="travel-services py-2">
+    <div class="container mt-3 mb-3">
+        <h2 class="text-center section-title">Our Travel Facilities</h2>
+        <p class="text-center text-muted mb-4">Comfortable • Safe • Premium Travel Experience</p>
+
+        <div class="row g-4">
+
+            <!-- Bus Facility -->
+            <div class="col-lg-4 col-md-6">
+                <div class="facility-card text-center p-4 shadow">
+                    <div class="facility-icon mb-3">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h4 class="mb-3">Bus Travel Facility</h4>
+                    <ul class="list-unstyled facility-list">
+                        <li><i class="fas fa-check-circle"></i> AC / Non-AC Buses</li>
+                        <li><i class="fas fa-check-circle"></i> Pushback Comfortable Seats</li>
+                        <li><i class="fas fa-check-circle"></i> GPS Tracking System</li>
+                        <li><i class="fas fa-check-circle"></i> Professional Drivers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Car Facility -->
+            <div class="col-lg-4 col-md-6">
+                <div class="facility-card text-center p-4 shadow">
+                    <div class="facility-icon mb-3">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h4 class="mb-3">Car Travel Facility</h4>
+                    <ul class="list-unstyled facility-list">
+                        <li><i class="fas fa-check-circle"></i> Sedan / SUV / Luxury Cars</li>
+                        <li><i class="fas fa-check-circle"></i> Clean & Well Maintained</li>
+                        <li><i class="fas fa-check-circle"></i> Safe & Comfortable Ride</li>
+                        <li><i class="fas fa-check-circle"></i> On-Time Pickup & Drop</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Traveller Facility -->
+            <div class="col-lg-4 col-md-6">
+                <div class="facility-card text-center p-4 shadow">
+                    <div class="facility-icon mb-3">
+                        <i class="fas fa-shuttle-van"></i>
+                    </div>
+                    <h4 class="mb-3">Traveller Van Facility</h4>
+                    <ul class="list-unstyled facility-list">
+                        <li><i class="fas fa-check-circle"></i> 12 / 17 / 20 Seater Traveller</li>
+                        <li><i class="fas fa-check-circle"></i> Extra Luggage Space</li>
+                        <li><i class="fas fa-check-circle"></i> Fully Air Conditioned</li>
+                        <li><i class="fas fa-check-circle"></i> Perfect for Group Travel</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-3 pb-3">
+            <a href="booking" class="btn View-More-Categories btn-lg px-5">
+                <i class="fas fa-phone-alt me-2"></i> Book Your Travel Now
+            </a>
+        </div>
+    </div>
+</section>
+    <!--  EveHotel & Reshort Section -->
+    <section class="EveHotel py-2">
+        <div class="container mt-3 mb-4">
+            <h2 class="section-title">Famous Resorts</h2>
+            <p class="text-center text-muted mb-4">Explore the Karnataka with These Trips Reshort</p>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card border-0 shadow position-relative">
+                        {% comment %} <span class="price-tag">₹629</span> {% endcomment %}
+                        <img src="{% static 'images/image_hotle/reshort_1.jpeg' %}" class="card-img-top"
+                            alt="Anthargange Sunrise Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Sakaleshapura </h5>
+                            <p class="text-muted">1 Day</p>
+                
+                            <!-- View Button -->
+                            <button class="btn EveHotel-btn btn-sm text-end" data-bs-toggle="modal" data-bs-target="#hotelModal1">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="hotelModal1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                  
+                        <div class="modal-header">
+                          <h5 class="modal-title">Resorts Facilities</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                  
+                        <div class="modal-body">
+                  
+                          <!-- List Group -->
+                          <ul class="list-group mb-3">
+                            <li class="list-group-item">✔ Free Wi-Fi</li>
+                            <li class="list-group-item">✔ Swimming Pool</li>
+                            <li class="list-group-item">✔ Complimentary Breakfast</li>
+                            <li class="list-group-item">✔ Air-Conditioned Rooms</li>
+                            <li class="list-group-item">✔ 24×7 Room Service</li>
+                          </ul>
+                  
+                          <!-- Images Group -->
+                          <ul class="images-group">
+                            <li class="image-group-item"><img src="{% static 'images/image_hotle/reshort_2.jpeg' %}" class="facility-img"></li>
+                            <li class="image-group-item"><img src="{% static 'images/image_hotle/reshort_3.jpeg' %}" class="facility-img"></li>
+                            <li class="image-group-item"><img src="{% static 'images/image_hotle/reshort_4.jpeg' %}" class="facility-img"></li>
+                            <li class="image-group-item"><img src="{% static 'images/image_hotle/reshort_5.jpeg' %}" class="facility-img"></li>
+                            <li class="image-group-item"><img src="{% static 'images/image_hotle/reshort_6.jpeg' %}" class="facility-img"></li>
+                          </ul>
+                  
+                        </div>
+                  
+                        <div class="modal-footer">
+                          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card border-0 shadow position-relative">
+                        {% comment %} <span class="price-tag">₹629</span> {% endcomment %}
+                        <img src="{% static 'images/image_hotle/reshort_7.jpeg' %}" class="card-img-top"
+                            alt="Anthargange Sunrise Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Dandeli</h5>
+                            <p class="text-muted">1 Day</p>
+                
+                            <!-- View Button -->
+                            <button class="btn EveHotel-btn btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModal1">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="hotelModal1" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Resorts Facilities</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                
+                      <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">✔ Free Wi-Fi</li>
+                            <li class="list-group-item">✔ Swimming Pool</li>
+                            <li class="list-group-item">✔ Complimentary Breakfast</li>
+                            <li class="list-group-item">✔ Air-Conditioned Rooms</li>
+                            <li class="list-group-item">✔ 24×7 Room Service</li>
+                        </ul>
+                      </div>
+                
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card border-0 shadow position-relative">
+                        {% comment %} <span class="price-tag">₹629</span> {% endcomment %}
+                        <img src="{% static 'images/image_hotle/reshort_8.jpeg' %}" class="card-img-top"
+                            alt="Anthargange Sunrise Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Madikeri</h5>
+                            <p class="text-muted">1 Day</p>
+                
+                            <!-- View Button -->
+                            <button class="btn EveHotel-btn btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModal1">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="hotelModal1" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Resorts Facilities</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                
+                      <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">✔ Free Wi-Fi</li>
+                            <li class="list-group-item">✔ Swimming Pool</li>
+                            <li class="list-group-item">✔ Complimentary Breakfast</li>
+                            <li class="list-group-item">✔ Air-Conditioned Rooms</li>
+                            <li class="list-group-item">✔ 24×7 Room Service</li>
+                        </ul>
+                      </div>
+                
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card border-0 shadow position-relative">
+                        {% comment %} <span class="price-tag">₹629</span> {% endcomment %}
+                        <img src="{% static 'images/image_hotle/reshort_9.jpeg' %}" class="card-img-top"
+                            alt="Anthargange Sunrise Trek">
+                        <div class="card-body">
+                            <h5 class="card-title">Chikkamagaluru</h5>
+                            <p class="text-muted">1 Day</p>
+                
+                            <!-- View Button -->
+                            <button class="btn EveHotel-btn btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModal1">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="hotelModal1" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Resorts Facilities</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                
+                      <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">✔ Free Wi-Fi</li>
+                            <li class="list-group-item">✔ Swimming Pool</li>
+                            <li class="list-group-item">✔ Complimentary Breakfast</li>
+                            <li class="list-group-item">✔ Air-Conditioned Rooms</li>
+                            <li class="list-group-item">✔ 24×7 Room Service</li>
+                        </ul>
+                      </div>
+                
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+</section>
+ <!--  Our Latest Blogs -->
+ <section id="blogs" class="py-3">
+    <div class="space bg-smoke">
+        <div class="container mt-3">
+
+            <div class="title-area text-center">
+                {% comment %} <h2 class="sub-title">Read the most recent thoughts and insights from our team.</h2> {% endcomment %}
+                <h2 class="sec-title mb-4">Our Latest Blogs</h2>
+                <p class="text-center text-muted mb-4">Read the most recent thoughts and insights from our team.</p>
+            </div>
+
+            <div class="row gy-4 justify-content-center">
+
+                {% for blog in blogs %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="th-blog blog-single has-post-thumbnail">
+
+                        <div class="blog-img">
+                            <a href="/blog/{{ blog.seo_url }}/">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.blogs_title }}">
+                            </a>
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-inner">
+
+                                <div class="blog-meta">
+                                    <a class="tour-cat author" href="javascript:;">
+                                        <i class="fa-light fa-user"></i> by Admin
+                                    </a>
+                                    <a class="tour-cat" href="#">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        {{ blog.created_at|date:"d M, Y" }}
+                                    </a>
+                                </div>
+
+                                <h2 class="blog-title">
+                                    <a href="/blog/{{ blog.seo_url }}/">
+                                        {{ blog.blogs_title }}
+                                    </a>
+                                </h2>
+
+                                <p class="blog-text">{{ blog.short_description|truncatechars:150 }}</p>
+                            </div>
+
+                            <a href="/blog/{{ blog.seo_url }}/" class=" bolgs-btn btn style4 th-icon">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+ <!-- Testimonials Section -->
+ <section class="py-2 What-Clients">
+    <div class="container mt-3">
+        <h2 class="section-title">What Clients Say About Us</h2>
+        <p class="text-center text-muted mb-4">Testimonials from our happy travelers</p>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="#" alt="Rahul sharma"
+                            class="testimonial-img">
+                        <div>
+                            <h5 class="mb-0">Manoj Sharma</h5>
+                            <p class="text-muted mb-0">Software Developer</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="mb-0">Amazing experience! Great accommodations, smooth travel, and wonderful
+                        destinations. Will book again!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="#" alt="Rajesh"
+                            class="testimonial-img">
+                        <div>
+                            <h5 class="mb-0">Sudhir Kr Singh</h5>
+                            <p class="text-muted mb-0">Senior Architect</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star-half-alt text-warning"></i>
+                    </div>
+                    <p class="mb-0">An unforgettable trip! Everything was perfectly planned, and we had the best
+                        time exploring. Highly recommended!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="#" alt="Reshma"
+                            class="testimonial-img">
+                        <div>
+                            <h5 class="mb-0">Rahul Kumar</h5>
+                            <p class="text-muted mb-0">Designer</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="mb-0">Perfect tour package! Hassle-free, well-organized, and filled with memorable
+                        moments. Loved every bit!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
