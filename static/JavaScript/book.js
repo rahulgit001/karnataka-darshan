@@ -1,5 +1,6 @@
 
 function submit_booking_form(event) {
+    debugger
     let from_location = document.getElementById("from_location").value;
     let to_location = document.getElementById("to_location").value;
     let destination = document.getElementById("destination").value;

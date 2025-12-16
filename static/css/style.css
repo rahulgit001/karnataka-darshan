@@ -419,7 +419,7 @@ body {
 .slider-wrapper {
   display: flex;
   gap: 20px;
-  animation: slideInfinite 40s linear infinite;
+  animation: slideInfinite 10s linear infinite;
   padding: 10px 0;
 }
 
@@ -628,12 +628,15 @@ body {
 }
 .call-btn-mob {
   right: 20px;
-  background: #25d366;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   bottom: 80px;
 }
 .whatsapp-float {
   right: 20px;
-  background: #25d366;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+}
+.book-btn{
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
 }
 .call-btn-mob:hover,
 .whatsapp-float:hover {
@@ -682,4 +685,18 @@ body {
 }
 .What-Clients{
     background-color: white;
+}
+
+
+/* Mobile screens only */
+@media (max-width: 576px) {
+    .carousel-inner {
+        height: 220px; /* adjust as needed */
+    }
+
+    .carousel-inner .carousel-item,
+    .carousel-inner img {
+        height: 100%;
+        object-fit: cover; /* prevents image stretching */
+    }
 }
