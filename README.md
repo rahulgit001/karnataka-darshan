@@ -3,6 +3,5 @@ karnataka_darshan
 
 
 GIT steps:
-  git pull
-  \n
-  nohup python manage.py runserver 0.0.0.0:8005 &
+  1. git pull
+  2. nohup python manage.py runserver 0.0.0.0:8005 &
