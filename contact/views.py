@@ -1,12 +1,20 @@
 import json
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from accounts.models import SeoKeywords
+from accounts.models import SeoKeywords, contactfrom
 
 
 
 def save_contact_details(body):
-    return
+    obj = contactfrom(
+        name = body["name"],
+        email = body["email"],
+        mobile = body["phone"],
+        subject = body["subject"],
+        message = body["message"]
+    )
+    obj.save()
+    return True
 
 
 def fetch_seo_keyword():

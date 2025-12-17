@@ -5,7 +5,8 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 from slugify import slugify
-from django_summernote.fields import SummernoteTextField
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField  
 
 
 class UserManager(BaseUserManager):
@@ -83,7 +84,7 @@ class ourlatestblogs(models.Model):
     blogs_title = models.CharField(max_length=255)                        
     seo_url = models.CharField(max_length=255)                               
     short_description = models.TextField()                                
-    content = SummernoteTextField()
+    content = RichTextUploadingField()
     meta_title = models.CharField(max_length=255, blank=True, null=True)  
     keywords = models.CharField(max_length=255, blank=True, null=True)    
     meta_description = models.TextField(blank=True, null=True)

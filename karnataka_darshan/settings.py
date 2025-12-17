@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'contact',
     'about',
     'home',
+    'ckeditor',
+    'ckeditor_uploader'
     'django_summernote',
     'corsheaders'
 ]
@@ -139,4 +141,12 @@ AUTH_USER_MODEL = 'accounts.User'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',  # full toolbar, or 'basic'
+        'height': 300,
+        'width': '100%',
+    },
+}
 

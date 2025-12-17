@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ blog.blogs_title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="blog-wrapper">
+    <article class="blog-card">
+
+        <!-- Blog Title -->
+        <h1 class="blog-title">{{ blog.blogs_title }}</h1>
+
+        <!-- Optional meta -->
+        {% if blog.created_at %}
+        <p class="blog-meta">
+            {{ blog.created_at|date:"F d, Y" }}
+        </p>
+        {% endif %}
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+            {{ blog.content|safe }}
+        </div>
+
+    </article>
+</section>
+
+{% endblock %}

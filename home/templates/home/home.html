@@ -562,34 +562,29 @@ Home
                     <div class="th-blog blog-single has-post-thumbnail">
 
                         <div class="blog-img">
-                            <a href="/blog/{{ blog.seo_url }}/">
-                                <img src="{{ blog.image.url }}" alt="{{ blog.blogs_title }}">
-                            </a>
+                            {% for img in blog.images.all %}
+                                <img src="{{ img.image.url}}" alt="{{ blog.blogs_title }}">
+                            {% endfor %}    
                         </div>
 
                         <div class="blog-content">
                             <div class="blog-inner">
 
                                 <div class="blog-meta">
-                                    <a class="tour-cat author" href="javascript:;">
-                                        <i class="fa-light fa-user"></i> by Admin
-                                    </a>
-                                    <a class="tour-cat" href="#">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        {{ blog.created_at|date:"d M, Y" }}
-                                    </a>
+                                        <i class="fa-light fa-user"> by Admin</i> 
+                                        <i class="fa-solid fa-calendar-days"> 
+                                            {{ blog.created_at|date:"d M, Y" }}</i>
+                                        
                                 </div>
 
                                 <h2 class="blog-title">
-                                    <a href="/blog/{{ blog.seo_url }}/">
                                         {{ blog.blogs_title }}
-                                    </a>
                                 </h2>
 
                                 <p class="blog-text">{{ blog.short_description|truncatechars:150 }}</p>
                             </div>
 
-                            <a href="/blog/{{ blog.seo_url }}/" class=" bolgs-btn btn style4 th-icon">Read More</a>
+                            <a href="/blog/{{ blog.id }}/" class=" bolgs-btn btn style4 th-icon">Read More</a>
                         </div>
 
                     </div>
