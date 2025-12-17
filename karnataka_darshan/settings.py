@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'about',
     'home',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
     'django_summernote',
     'corsheaders'
 ]
