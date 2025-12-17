@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from accounts.models import EventImage, UpcomingEvents, TourCategories, ourlatestblogs, SeoKeywords
+from accounts.models import (
+    EventImage, UpcomingEvents, TourCategories, 
+    ourlatestblogs, SeoKeywords
+)
 
 
 def fetch_upcoming_events():
@@ -49,4 +52,10 @@ def home_page(request):
         "header_tag":  header_tag,
         "meta_keyword": meta_keyword,
         
+    })
+
+def get_blogs(request, blog_id):
+    blogs = ourlatestblogs.objects.prefetch_related('images').get(id=blog_id)
+    return render(request, 'home/blog.html', {
+        "blog":  blogs        
     })

@@ -59,18 +59,30 @@ function submit_booking_form(event) {
         "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-    }).then((response) => {
+    }).then(response => {
         if (response.ok) {
-            alert("Booking submitted successfully!");
-            document.querySelector(".booking-form").reset();
-        } else {
-            alert("Failed to submit booking. Status: " + response.status);
+            document.querySelector(".booking-form").style.display = "none";
+
+            const thankYou = document.getElementById("thankYouMessage");
+            thankYou.style.display = "block";
+
+            // Scroll to the thank you message smoothly
+            thankYou.scrollIntoView({ behavior: "smooth", block: "start" });
+            //document.getElementById("bookingForm").reset(); // CORRECT RESET
+
+             // Redirect after 30 seconds (30000 ms)
+            setTimeout(() => {
+                window.location.href = "/"; // home page URL
+            }, 5000);
+        } else {bookingForm
+            alert("Failed to submit booking");
         }
-    }).catch((error) => {
+    })
+    .catch(error => {
         console.error("Error:", error);
-        alert("There was an error submitting the booking.");
-        });
-    }
+        alert("Server error");
+    });
+}
 
 
 
