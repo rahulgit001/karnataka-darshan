@@ -1,0 +1,8 @@
+[Unit]
+Description=gunicorn socket for karnataka_darshan django app
+
+[Socket]
+ListenStream=/var/www/karnataka-darshan/karnataka_darshan.sock
+
+[Install]
+WantedBy=sockets.target
