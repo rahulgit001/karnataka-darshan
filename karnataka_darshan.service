@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon for karnataka_darshan django app
+Requires=karnataka_darshan.socket
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/karnataka-darshan
+ExecStart=/var/www/karnataka-darshan/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/var/www/karnataka-darshan/karnataka_darshan.sock \
+          karnataka_darshan.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
