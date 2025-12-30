@@ -4,4 +4,4 @@ karnataka_darshan
 
 GIT steps:
   1. git pull
-  2. nohup python manage.py runserver 0.0.0.0:8005 &
+  2. sudo systemctl restart karnataka_darshan.service
